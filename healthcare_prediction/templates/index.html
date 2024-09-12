@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Prediction</title>
+</head>
+<body>
+    <h1>Healthcare Prediction System</h1>
+    <form action="/predict" method="post">
+        <label for="Age">Age:</label><br>
+        <input type="number" id="Age" name="Age" step="0.1"><br><br>
+
+        <label for="Gender">Gender:</label><br>
+        <select id="Gender" name="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <label for="Medical Condition">Medical Condition:</label><br>
+        <select id="Medical Condition" name="Medical Condition">
+            <option value="Cancer">Cancer</option>
+            <option value="Obesity">Obesity</option>
+            <option value="Diabetes">Diabetes</option>
+            <option value="Asthma">Asthma</option>
+            <option value="Hypertension">Hypertension</option>
+            <option value="Arthritis">Arthritis</option>
+        </select><br><br>
+
+        <label for="Insurance Provider">Insurance Provider:</label><br>
+        <input type="text" id="InsuranceProvider" name="Insurance Provider"><br><br>
+
+        <label for="Test Results">Test Results:</label><br>
+        <input type="text" id="TestResults" name="Test Results"><br><br>
+
+        <label for="Medication">Medication:</label><br>
+        <input type="text" id="Medication" name="Medication"><br><br>
+
+        <label for="Days in hospital">Days in hospital:</label><br>
+        <input type="number" id="Daysinhospital" name="Days in hospital" step="1"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
